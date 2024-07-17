@@ -2,6 +2,14 @@ const express = require('express');
 const { CalculateModel } = require('../model/calculation.model');
 
 const calcRouter = express.Router();
+calcRouter.get('/result', async(req, res) =>{
+    try {
+      const user = await CalculateModel.find();
+      res.status(200).send(user);
+    } catch (err) {
+      res.status(400).send({ error: err });
+    }
+});
 
 calcRouter.post('/calculate', async (req, res) => {
     const { length, width, wallHeight, numMasons, workPerDay, startDate } = req.body;
@@ -32,9 +40,9 @@ calcRouter.post('/calculate', async (req, res) => {
     await calculation.save();
 
     res.status(200).json({
-        "Total Work":perimeter,
-        "Number of Worker":numMasons,
-        "Total Days Required":daysRequired,
+        perimeter,
+        numMasons,
+        daysRequired,
         endDate: endDate.toDateString()
     });
 });
