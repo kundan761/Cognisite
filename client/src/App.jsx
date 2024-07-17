@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
-
+import url from './components/url.js';
 function App() {
     const [length, setLength] = useState('');
     const [width, setWidth] = useState('');
@@ -16,7 +16,7 @@ function App() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await axios.post('http://localhost:8080/api/calculate', {
+        const res = await axios.post(`${url}/calculate`, {
             length: Number(length),
             width: Number(width),
             wallHeight: Number(wallHeight),

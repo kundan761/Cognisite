@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import GanttChart from './GanttChart';
+import url from './url.js';
 
 const Result = () => {
     const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ const Result = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://localhost:8080/api/result');
+                const res = await axios.get(`${url}/result`);
                 setData(res.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
