@@ -62,7 +62,9 @@ This MERN stack application helps users calculate construction parameters for a 
 
 ## Deployment
 
-[Click here to view the backend of deployed applicatio](https://cognisite-ichw.onrender.com/api/result)
+[Click here to view the frontend of deployed application](https://cognisite-zeta.vercel.app/)
+
+[Click here to view the backend of deployed application](https://cognisite-ichw.onrender.com/api/result)
 
 ## License
 
