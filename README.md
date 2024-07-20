@@ -44,7 +44,7 @@ This MERN stack application helps users calculate construction parameters for a 
    Create a `.env` file in the root directory and add the following variables:
 
    ```
-   MONGO_URI=your_mongodb_connection_for _your _local_system
+   mongoURL=your_mongodb_connection_for _your _local_system
    PORT=8080
    ```
 
